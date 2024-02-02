@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Tienda_En_Linea.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//Test
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
