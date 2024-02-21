@@ -1,0 +1,60 @@
+﻿@using Tienda_En_Linea.Data;
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            <h3>Registrar Items</h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input @bind="Datos.Nombre" type="text" class="form-control" placeholder="Nombre">
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="mb-3">
+                    <label class="form-label">Descripcion</label>
+                    <input @bind="Datos.Descripcion" type="text" class="form-control" placeholder="Descripcion">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label class="form-label">Tipo</label>
+                    <input @bind="Datos.Tipo" type="text" class="form-control" placeholder="Tipo">
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="mb-3">
+                    <label class="form-label">Precio</label>
+                    <input @bind="Datos.Precio" type="text" class="form-control" placeholder="Precio">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <span @onclick="Registrar" class="btn btn-primary">Guardar</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@code{
+    [Parameter]
+    public Items Datos { get; set; } = new Items();
+
+    public void Registrar()
+    {
+        Memoria.Items.Add(Datos);
+        StateHasChanged();
+    }
+}

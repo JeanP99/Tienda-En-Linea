@@ -1,8 +1,41 @@
-﻿@page "/tienda"
+﻿@page "/tienda";
+@using Tienda_En_Linea.Components;
+@using Tienda_En_Linea.Data;
 
 
-<h3>Tienda</h3>
+<h3>
+    Tienda
+    <span @onclick="()=>New =!New" class="btn btn-success">+</span>
+</h3>
+@if(New)
+{
+    <FormItems />
+}
+<table class="table">
+<thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Tipo</th>
+        <th>Precio</th>
+    </tr>
+</thead>
+<tbody>
+        @if (Memoria.Items.Any())
+        {
+            @foreach (var items in Memoria.Items)
+            {
+                <tr>
+                    <th>@items.Matricula</th>
+                    <th>@items.Nombre</th>
+                    <th>@items.Tipo</th>
+                    <th>@items.Precio</th>
+                </tr>
+            }
+        }
+</tbody>
+</table>
 
 @code {
-
+    public bool New { get; set; } = false;
 }

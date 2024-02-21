@@ -11,8 +11,4 @@
     <Content Remove="Shared\Item.razor" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="Pages\Items.razor" />
-  </ItemGroup>
-
 </Project>
